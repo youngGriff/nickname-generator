@@ -69,9 +69,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 
 ## ToDo
- - Styling
- - Refresh button
+ - Styling - Done
+ - Refresh button - Done
  - Unit test coverage
- - Continuous integration
- - Footer
- - Ect
+ - Continuous integration(hosting)
+ - Footer - Done
+ - Ect.

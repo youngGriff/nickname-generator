@@ -1,8 +1,124 @@
+$accent: #f9c869;
+$backgroundColor: #333333;
+$titleColor: $backgroundColor;
+$grey: #666666;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 .title {
   text-align: center;
-  color: grey;
+  color: $titleColor;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .main-divider {
-  width: 80%;
+  width: 85%;
+  background-color: grey;
+  height: 1px;
+}
+
+a, a:hover, a:visited {
+  color: $accent;
+}
+
+;
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+}
+
+.flex-horizontal-wrapper {
+  margin: 30px 40px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  * {
+    margin-top: 10px;
+  }
+}
+
+.generated-name {
+  margin-top: 35px;
+  color: $grey;
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  background-color: $accent;
+  padding: 16px 25px;
+  margin-top: 30px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 3px;
+  border-radius: 2px;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  outline: none;
+  transition: background-color .1s ease;
+  &::after {
+    transition: background-color .2s ease;
+    position: absolute;
+    content: '';
+    height: 4px;
+    bottom: 0;
+    width: 100%;
+    background-color: darken($accent, 50%);
+    opacity: .18;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    left: 0;
+  }
+  &:focus, &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+  &:hover {
+    background-color: lighten($accent, 5%);
+    &::after {
+      opacity: .22;
+    }
+  }
+
+  &:active {
+    background-color: darken($accent, 5%);
+    &::after {
+      opacity: .32;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $backgroundColor;
+  p {
+    color: white;
+  }
+
 }
