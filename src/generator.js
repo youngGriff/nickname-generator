@@ -10,7 +10,7 @@ export default class Generator {
   }
 
   async generate () {
-    const url = new URL('http://uinames.com/api/');
+    const url = new URL('https://uinames.com/api/');
     this.collectParameters(url);
     const json = await (await fetch(url)).json();
 
