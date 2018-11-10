@@ -15,22 +15,18 @@ $genButton.addEventListener('click', () => getName());
 function getName () {
   gen.set($SelecGender.options[$SelecGender.selectedIndex].value,
     $countrySelect.options[$countrySelect.selectedIndex].value);
-  console.log(gen.data);
 
   gen.generate()
     .then(value => {
-        $copyButton.style.display = 'inline-block';
-
-        $name.innerText = value;
-        console.log(value);
-      }
+      $copyButton.style.display = 'inline-block';
+      $name.innerText = value;
+    }
     )
-    .catch(e => {
-        $copyButton.style.display = 'none';
+    .catch(() => {
+      $copyButton.style.display = 'none';
 
-        $name.innerText = 'Cannot get name';
-        console.log(e);
-      }
+      $name.innerText = 'Cannot get name';
+    }
     );
 }
 
@@ -44,5 +40,5 @@ function copyToClip (innerText) {
   $body.removeChild($tempInput);
 }
 
-$copyButton.addEventListener('click', evt => copyToClip($name.innerText));
+$copyButton.addEventListener('click', () => copyToClip($name.innerText));
 getName();

@@ -7,6 +7,7 @@ Automatic nickname generator tool. We will automatically create a nickname in se
  - CSS
  - JavaScript
  - Node.js
+ - Jest
  - SSCS
 ## Getting Started
 
@@ -18,7 +19,7 @@ See deployment for notes on how to deploy the project on a live system.
 Clone the repo 
 
 ```
-$ git clone ...
+$ git clone https://github.com/youngGriff/nickname-generator
 ```
 
 ```
@@ -71,7 +72,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## ToDo
  - Styling - Done
  - Refresh button - Done
- - Unit test coverage
- - Continuous integration(hosting)
+ - Unit test coverage - Partly Done
+ - Continuous integration(hosting) - Done
  - Footer - Done
  - Ect.

@@ -1,9 +1,11 @@
-$accent: #f9c869;
-$backgroundColor: #333333;
+$accent: #F9C869;
+$backgroundColor: #333;
 $titleColor: $backgroundColor;
-$grey: #666666;
+$grey: #666;
 
-*, *:before, *:after {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -12,25 +14,27 @@ $grey: #666666;
   color: $titleColor;
 }
 
-html, body {
-  height: 100%;
+html,
+body {
   margin: 0;
-  width: 100%;
   padding: 0;
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
 .main-divider {
+  background-color: #808080;
   width: 85%;
-  background-color: grey;
   height: 1px;
 }
 
-a, a:hover, a:visited {
+a,
+a:hover,
+a:visited {
   color: $accent;
 }
 
-;
 .main-wrapper {
   display: flex;
   flex-direction: column;
@@ -39,13 +43,13 @@ a, a:hover, a:visited {
 }
 
 .flex-horizontal-wrapper {
-  margin: 30px 40px 40px;
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-evenly;
+  margin: 30px 40px 40px;
+  width: 100%;
   * {
     margin-top: 10px;
   }
@@ -58,39 +62,42 @@ a, a:hover, a:visited {
 
 .button {
   display: inline-block;
-  border: none;
-  color: #fff;
-  text-decoration: none;
+  position: relative;
+  transition: background-color .1s ease;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  outline: none;
+  border: 0;
+  border-radius: 2px;
   background-color: $accent;
   padding: 16px 25px;
-  margin-top: 30px;
-  font-size: 13px;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 3px;
-  border-radius: 2px;
   text-align: center;
-  margin-bottom: 20px;
-  position: relative;
-  outline: none;
-  transition: background-color .1s ease;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
   &::after {
-    transition: background-color .2s ease;
     position: absolute;
-    content: '';
-    height: 4px;
     bottom: 0;
-    width: 100%;
-    background-color: darken($accent, 50%);
+    left: 0;
+    transition: background-color .2s ease;
     opacity: .18;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
-    left: 0;
+    background-color: darken($accent, 50%);
+    width: 100%;
+    height: 4px;
+    content: '';
   }
-  &:focus, &:hover {
+
+  &:focus,
+  &:hover {
     text-decoration: none;
-    color: #fff;
+    color: white;
   }
+
   &:hover {
     background-color: lighten($accent, 5%);
     &::after {
@@ -107,18 +114,17 @@ a, a:hover, a:visited {
 }
 
 .footer {
-  width: 100%;
-  max-width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin-top: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
   background-color: $backgroundColor;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  max-width: 100%;
   p {
     color: white;
   }
-
 }
