@@ -7,6 +7,7 @@ const $countrySelect = document.getElementById('country-select');
 const $SelecGender = document.getElementById('gender-select');
 const $body = document.getElementsByTagName('body')[0];
 const $copyButton = document.getElementById('btn-copy');
+import runtime from 'serviceworker-webpack-plugin/lib/runtime';
 
 const gen = new Generator;
 $copyButton.style.display = 'none';
@@ -18,15 +19,16 @@ function getName () {
 
   gen.generate()
     .then(value => {
-      $copyButton.style.display = 'inline-block';
-      $name.innerText = value;
-    }
+        $copyButton.style.display = 'inline-block';
+        $name.innerText = value;
+        console.log(value);
+      }
     )
-    .catch(() => {
-      $copyButton.style.display = 'none';
-
-      $name.innerText = 'Cannot get name';
-    }
+    .catch(e => {
+        $copyButton.style.display = 'none';
+        console.log(e);
+        $name.innerText = 'Cannot get name';
+      }
     );
 }
 
@@ -42,3 +44,8 @@ function copyToClip (innerText) {
 
 $copyButton.addEventListener('click', () => copyToClip($name.innerText));
 getName();
+
+
+if ('serviceWorker' in navigator) {
+  const registration = runtime.register();
+}

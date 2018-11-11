@@ -1,7 +1,7 @@
 # Nickname Generator
 
 Automatic nickname generator tool. We will automatically create a nickname in seconds.
-[Demo]()
+[Demo](https://nickname-generator.herokuapp.com/)
 # Tech stack
  - HTML
  - CSS
@@ -44,7 +44,7 @@ $ npm run test
 
 ## Deployment
 
-We use [Travis Ci](https://travis-ci.org/) for deployment. 
+We use [Heroku](https://www.heroku.com/) for deployment. 
 After merge changes into master branch the app will be automatically deployed to server 
 
 ## Contributing

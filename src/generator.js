@@ -1,12 +1,13 @@
 export default class Generator {
-  set (gender = 'both', region = 'Albania'){
+  set (gender = 'both', region = 'Albania') {
     this.data = {
       'gender': gender,
       'region': region
     };
   }
+
   constructor (gender = 'both', region = 'Albania') {
-    this.set(gender,region);
+    this.set(gender, region);
   }
 
   async generate () {

@@ -1,12 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env, {mode}) => {
   const devMode = mode !== 'production';
   const config = {
     entry: [
-      './src/main.js'
+      './src/main.js',
+
     ],
     output: {
       filename: 'bundle.js',
@@ -43,7 +45,9 @@ module.exports = (env, {mode}) => {
       ]
     },
     plugins: [
-
+      new ServiceWorkerWebpackPlugin({
+        entry: path.join(__dirname, '../src/service-worker.js'),
+      }),
       new HtmlWebpackPlugin({
         template: path.resolve('./index.html')
       }),
