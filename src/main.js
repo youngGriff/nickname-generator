@@ -1,5 +1,5 @@
 import './styles/index.scss';
-import Generator from './generator';
+import generate from './generator';
 
 const $name = document.getElementById('name');
 const $genButton = document.getElementById('btn-generate');
@@ -8,27 +8,27 @@ const $SelecGender = document.getElementById('gender-select');
 const $body = document.getElementsByTagName('body')[0];
 const $copyButton = document.getElementById('btn-copy');
 import runtime from 'serviceworker-webpack-plugin/lib/runtime';
+import {GeneratorData} from './GeneratorData';
 
-const gen = new Generator;
 $copyButton.style.display = 'none';
 $genButton.addEventListener('click', () => getName());
 
 function getName () {
-  gen.set($SelecGender.options[$SelecGender.selectedIndex].value,
+  const genData = new GeneratorData($SelecGender.options[$SelecGender.selectedIndex].value,
     $countrySelect.options[$countrySelect.selectedIndex].value);
 
-  gen.generate()
+  generate(genData)
     .then(value => {
-        $copyButton.style.display = 'inline-block';
-        $name.innerText = value;
-        console.log(value);
-      }
+      $copyButton.style.display = 'inline-block';
+      $name.innerText = value;
+      console.log(value);
+    }
     )
     .catch(e => {
-        $copyButton.style.display = 'none';
-        console.log(e);
-        $name.innerText = 'Cannot get name';
-      }
+      $copyButton.style.display = 'none';
+      console.log(e);
+      $name.innerText = 'Cannot get name';
+    }
     );
 }
 
