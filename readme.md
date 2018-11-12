@@ -1,6 +1,6 @@
 # Nickname Generator
 
-Automatic nickname generator tool. We will automatically create a nickname in seconds.
+Automatic nickname generator tool. We will automatically create a nickname in seconds. This app could be useful for people who prefer to not input personal data during registration. 
 [Demo](https://nickname-generator.herokuapp.com/)
 # Tech stack
  - HTML
@@ -44,8 +44,7 @@ $ npm run test
 
 ## Deployment
 
-We use [Heroku](https://www.heroku.com/) for deployment. 
-After merge changes into master branch the app will be automatically deployed to server 
+[Heroku](https://www.heroku.com/) is used for deployment. 
 
 ## Contributing
 
@@ -72,7 +71,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## ToDo
  - Styling - Done
  - Refresh button - Done
- - Unit test coverage - Partly Done
+ - Unit test coverage - Partly Done(Promises is left uncovered)
  - Continuous integration(hosting) - Done
  - Footer - Done
  - Ect.
